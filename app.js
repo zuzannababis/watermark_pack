@@ -75,7 +75,7 @@ const startApp = async () => {
         message: 'Type your watermark text:',
       }]);
       options.watermarkText = text.value;
-      addTextWatermarkToImage(`./img/${options.inputImage},./img/${prepareOutputFilename(options.inputImage)},${options.watermarkText}`);
+      addTextWatermarkToImage(`./img/${options.inputImage}`,`./img/${prepareOutputFilename(options.inputImage)}`,`${options.watermarkText}`);
       console.log(`Success!`);
       startApp();
     }
@@ -92,7 +92,7 @@ const startApp = async () => {
     }]);
     options.watermarkImage = image.filename;
     if (fs.existsSync(`./img/${options.inputImage}`) && fs.existsSync(`./img/${options.watermarkImage}`)) {
-      addImageWatermarkToImage(`./img/${options.inputImage},./img/${prepareOutputFilename(options.inputImage)},./img/${options.watermarkImage}`);
+      addImageWatermarkToImage(`./img/${options.inputImage}`,`./img/${prepareOutputFilename(options.inputImage)}`,`./img/${options.watermarkImage}`);
       console.log(`Success!`);
       startApp();
     }
